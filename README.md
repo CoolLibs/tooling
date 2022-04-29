@@ -4,8 +4,8 @@ Here are all the common things that we use when writing code.
 
 You can simply run *setup.py* to setup everything automatically.<br/>
 Currently this script does:
-- copy *.clang-format* to the parent directory
-- copy *.clang-tidy* to the parent directory
+- copy *.clang-format* to the parent directory (because it won't get detected unless it is in a parent directory of your C++ source files)
+- copy *.clang-tidy* to the parent directory (because it won't get detected unless it is in a parent directory of your C++ source files)
 
 ## Formater
 
