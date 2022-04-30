@@ -26,14 +26,14 @@ BreakBeforeBinaryOperators: All
 BreakBeforeBraces: Custom
 BraceWrapping:
     AfterCaseLabel: true
-    AfterClass: true
+    AfterClass: false
     AfterControlStatement: true
-    AfterEnum: true
+    AfterEnum: false
     AfterFunction: true
     AfterNamespace: false
     AfterObjCDeclaration: true
-    AfterStruct: true
-    AfterUnion: true
+    AfterStruct: false
+    AfterUnion: false
     AfterExternBlock: true
     BeforeCatch: true
     BeforeElse: true
