@@ -8,6 +8,7 @@ We use a subset of [gitmoji](https://gitmoji.dev/), plus a few that we added for
 | ♻️ | Refactor code. |
 | 🏗️ | Make architectural changes. |
 | 🧼 | Cleanup code. |
+| 🚨 | Fix compiler / linter warnings. |
 | 🚚 | Move or rename files. |
 | 📝 | Add or update documentation. |
 | 💡 | Add or update comments in source code. |
