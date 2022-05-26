@@ -12,11 +12,7 @@ def copy_file_to_parent_directory(file_name):
     shutil.copyfile(os.path.join(current_folder(), file_name),
                     os.path.join(parent_folder(),  file_name))
 
-def copy_clang_format():
-    copy_file_to_parent_directory(".clang-format")
-
-def copy_clang_tidy():
-    copy_file_to_parent_directory(".clang-tidy")
-
-copy_clang_format()
-copy_clang_tidy()
+def make_directory_if_necessary(path):
+    import os
+    if not os.path.exists(path):
+        os.mkdir(path)
