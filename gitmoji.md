@@ -16,6 +16,7 @@ We use a subset of [gitmoji](https://gitmoji.dev/), plus a few that we added for
 | ✏️ | Fix typos. |
 | ✅ | Add, update, or pass tests. |
 | 🧪 | Add a failing test. |
+| 🩹 | Simple fix for a non-critical issue. |
 | ⚡️ | Improve performance. |
 | 🔥 | Remove code or files. |
 | ⚰️ | Remove dead code. |
