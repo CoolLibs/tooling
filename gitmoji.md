@@ -24,7 +24,7 @@ We use a subset of [gitmoji](https://gitmoji.dev/), plus a few that we added for
 | 💩 | Write bad code that needs to be improved. |
 | 💄 | Add or update the UI and style files. (e.g. Changing the layout or appearance of a *Dear ImGui* widget) |
 | 🎨 | Improve structure / format of the code. (e.g. Applying *.clang-format*) |
-| 🔧 | Add or update configuration files. (*CMakeLists.txt*, *.clang-format*, *.clang-tidy*) |
+| 🔧 | Add or update configuration files. (*CMakeLists.txt*, *.clang-format*, *.clang-tidy*, *imgui.ini*) |
 | ⬆️  | Upgrade a dependency. |
 | ⬇️  | Downgrade a dependency. |
 | ➕ | Add a dependency. |
