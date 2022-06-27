@@ -12,7 +12,7 @@ If you need only some of the setup you can run *setup_dev_tools.py* and/or *setu
 
 [^1]: Because it won't get detected unless it is in a parent directory of your C++ source files. This is also cool because it allows you to tweak the copied version and commit it. Basically it allows you to modify our version without having to do a fork.
 
-## Formater
+## Formatter
 
 We use *ClangFormat* as our [formatting tool](https://julesfouchy.github.io/Learn--Clean-Code-With-Cpp/lessons/formatting-tool/) and we provide a *.clang-format* file to configure it.
 
