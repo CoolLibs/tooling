@@ -23,7 +23,8 @@ def clear_generated_folder(path_relative_to_project_root):
     import shutil
     import os
     folder = output_folder(path_relative_to_project_root)
-    shutil.rmtree(folder)
+    if (os.path.isdir(folder)):
+        shutil.rmtree(folder)
     os.makedirs(folder)
 
 
