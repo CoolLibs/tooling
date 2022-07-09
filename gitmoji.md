@@ -17,6 +17,7 @@ We use a subset of [gitmoji](https://gitmoji.dev/), plus a few that we added for
 | ✅ | Add, update, or pass tests. | :green checkmark: |
 | 🧪 | Add a failing test. | :test tube: |
 | 🩹 | Simple fix for a non-critical issue. | :bandage: |
+| 🚧 | WIP, Work in Progress. | :construction sign: |
 | ⚡️ | Improve performance. | :zap: |
 | 🔥 | Remove code or files. | :fire: |
 | ⚰️ | Remove dead code. | :coffin: |
