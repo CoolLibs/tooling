@@ -6,7 +6,7 @@ def allowed_extensions():
         "cpp",
         "h",
         "hpp",
-        # "inl", # Bad idea, because they are already generated with a given style and formatting them doesn't add anyting and can annoy us if they get re-formatted
+        "inl",
         "tpp",
         "glsl",
         "frag",
@@ -23,22 +23,23 @@ def extension(file):
     return Path(file).suffix.strip('.')
 
 
-def run_clang_format_on_one_folder(folder, ignored=[]):
+def run_clang_format_on_one_folder(folder, ignored=[], print_result=True):
     import os
     from os import listdir
     from os.path import join, isfile
     for file in listdir(folder):
         path = join(folder, file)
         if isfile(path) and extension(path) in allowed_extensions() and not file in ignored:
-            print(path)
+            if (print_result):
+                print(path)
             os.chdir(folder)
             os.system(f"clang-format -style=file -i {file}")
 
 
-def run_clang_format_on_folder(folder, ignored=[]):
+def run_clang_format_on_folder(folder, ignored=[], print_result=True):
     import os
     for subfolder in [x[0] for x in os.walk(folder)]:
-        run_clang_format_on_one_folder(subfolder, ignored)
+        run_clang_format_on_one_folder(subfolder, ignored, print_result)
 
 
 def parent_folder():
@@ -46,20 +47,23 @@ def parent_folder():
     return Path(__file__).parent.parent
 
 
-def apply_clang_format(folder, ignored=[]):
+def apply_clang_format(folder, ignored=[], print_result=True):
     import os
-    from termcolor import colored
+    if print_result:
+        from termcolor import colored
 
     path = os.path.join(parent_folder(), folder)
     if (os.path.isdir(path)):
-        print(colored(
-            f"Applying clang-format on '{folder}' (Full path: '{path}')",
-            'green'))
-        run_clang_format_on_folder(path, ignored)
+        if print_result:
+            print(colored(
+                f"Applying clang-format on '{folder}' (Full path: '{path}')",
+                'green'))
+        run_clang_format_on_folder(path, ignored, print_result)
     else:
-        print(colored(
-            f"Applying clang-format on '{folder}' FAILED. We did not find '{path}'",
-            'red'))
+        if print_result:
+            print(colored(
+                f"Applying clang-format on '{folder}' FAILED. We did not find '{path}'",
+                'red'))
 
 
 if __name__ == '__main__':
