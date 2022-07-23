@@ -9,6 +9,7 @@ We use a subset of [gitmoji](https://gitmoji.dev/), plus a few that we added for
 | 🏗️ | Make architectural changes. | :building construction: |
 | 🤏 | Small tweaks to the behaviour or implementation of the code. | :pinch: |
 | 🧼 | Cleanup code. | :soap: |
+| 👓 | Take a code review into account. Make changes to pass a Pull Request. | :glasses: |
 | 🚨 | Fix compiler / linter warnings and errors. | :police cars revolving light: |
 | 🚚 | Move or rename files. | :truck: |
 | 📝 | Add or update documentation. | :memo: |
