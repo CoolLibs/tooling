@@ -46,20 +46,23 @@ def parent_folder():
     return Path(__file__).parent.parent
 
 
-def apply_clang_format(folder, ignored=[]):
+def apply_clang_format(folder, ignored=[], print_result=True):
     import os
-    from termcolor import colored
+    if print_result:
+        from termcolor import colored
 
     path = os.path.join(parent_folder(), folder)
     if (os.path.isdir(path)):
-        print(colored(
-            f"Applying clang-format on '{folder}' (Full path: '{path}')",
-            'green'))
+        if print_result:
+            print(colored(
+                f"Applying clang-format on '{folder}' (Full path: '{path}')",
+                'green'))
         run_clang_format_on_folder(path, ignored)
     else:
-        print(colored(
-            f"Applying clang-format on '{folder}' FAILED. We did not find '{path}'",
-            'red'))
+        if print_result:
+            print(colored(
+                f"Applying clang-format on '{folder}' FAILED. We did not find '{path}'",
+                'red'))
 
 
 if __name__ == '__main__':
