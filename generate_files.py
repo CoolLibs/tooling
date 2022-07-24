@@ -64,7 +64,12 @@ def generate(folder="generated", files=[], should_apply_clang_format=True):
         generate_one(function, folder)
 
     if should_apply_clang_format:
-        import apply_clang_format
+        from os import path
+        from pathlib import Path
+        from importlib.machinery import SourceFileLoader
+        apply_clang_format = SourceFileLoader(
+            "apply_clang_format",
+            path.join(Path(path.abspath(__file__)).parent, "apply_clang_format.py")).load_module()
         apply_clang_format.apply_clang_format(
             folder=output_folder(folder),
             print_result=False,
