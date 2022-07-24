@@ -58,7 +58,14 @@ def heading(function_name):
 """
 
 
-def generate(folder="generated", files=[]):
+def generate(folder="generated", files=[], should_apply_clang_format=True):
     clear_generated_folder(folder)
     for function in files:
         generate_one(function, folder)
+
+    if should_apply_clang_format:
+        import apply_clang_format
+        apply_clang_format.apply_clang_format(
+            folder=output_folder(folder),
+            print_result=False,
+        )
