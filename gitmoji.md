@@ -27,7 +27,7 @@ We use a subset of [gitmoji](https://gitmoji.dev/), plus a few that we added for
 | 💄 | Add or update the UI and style files. (e.g. Changing the layout or appearance of a _Dear ImGui_ widget) | :lipstick: |
 | 🎨 | Improve structure / format of the code. (e.g. Applying _.clang-format_) | :art: :palette: |
 | 🔧 | Add or update configuration files. (_CMakeLists.txt_, _.clang-format_, _.clang-tidy_, _imgui.ini_) | :wrench: |
-| 🔨 | Add or update development scripts. (Helper Python scripts, _etc._) | :hammer: |
+| 🔨 | Add or update development scripts. (CI, Helper Python scripts, _etc._) | :hammer: |
 | ⬆️ | Upgrade a dependency. | :up arrow: |
 | ⬇️ | Downgrade a dependency. | :down arrow: |
 | ➕ | Add a dependency. | :plus: |
