@@ -68,6 +68,7 @@ def apply_clang_format(folder, ignored=[], print_result=True):
 
 if __name__ == '__main__':
     apply_clang_format('src')
+    apply_clang_format('include')
     apply_clang_format('res')
     apply_clang_format('test')
     apply_clang_format('tests')
