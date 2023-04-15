@@ -35,3 +35,4 @@ We use a subset of [gitmoji](https://gitmoji.dev/), plus a few that we added for
 | 🔀 | Merge branches. | :twisted arrows: |
 | ⏪️ | Revert changes. | :backward arrows: |
 | 🎉 | Begin a project. | :tada: :party popper: |
+| 🌐 | Website | :globe_with_meridians: |
