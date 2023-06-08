@@ -43,24 +43,25 @@ def output_folder(path_relative_to_project_root):
     return os.path.join(root_folder, path_relative_to_project_root)
 
 
-def generate_one(function, path_relative_to_project_root, calling_file):
+def generate_one(function, folder, calling_file):
     generate_file(
         f"{function.__name__}{SUFFIX()}",
+        f"{function.__name__}",
         function(),
-        path_relative_to_project_root,
+        folder,
         calling_file,
     )
 
 
-def file_path(name, path_relative_to_project_root):
+def file_path(name, folder):
     import os
 
-    return os.path.join(output_folder(path_relative_to_project_root), name) + ".inl"
+    return os.path.join(folder, name) + ".inl"
 
 
-def generate_file(name, content, path_relative_to_project_root, calling_file):
-    with open(file_path(name, path_relative_to_project_root), "w") as f:
-        f.write(heading(name, calling_file) + content)
+def generate_file(name, name_without_suffix, content, folder, calling_file):
+    with open(file_path(name, folder), "w") as f:
+        f.write(heading(name_without_suffix, calling_file) + content)
 
 
 def heading(function_name, calling_file):
@@ -87,7 +88,7 @@ def apply_clang_format_on_generated_files(folder):
         path.join(Path(path.abspath(__file__)).parent, "apply_clang_format.py"),
     ).load_module()
     apply_clang_format.apply_clang_format(
-        folder=output_folder(folder),
+        folder=folder,
         print_result=False,
     )
 
@@ -127,6 +128,8 @@ def cleanup(function, folder):
 def generate(
     folder="generated", files=[], should_apply_clang_format=True, calling_file=""
 ):
+    folder = output_folder(folder)
+
     for function in files:
         generate_one(function, folder, calling_file)
 
