@@ -59,8 +59,28 @@ def file_path(name, folder):
     return os.path.join(folder, name) + ".inl"
 
 
+def create_folder_ifn(path):
+    import os
+
+    try:
+        os.makedirs(path)
+    except FileExistsError:
+        pass
+
+
+def create_file_ifn(path):
+    try:
+        with open(path, "x"):
+            pass
+    except FileExistsError:
+        pass
+
+
 def generate_file(name, name_without_suffix, content, folder, calling_file):
-    with open(file_path(name, folder), "w") as f:
+    path = file_path(name, folder)
+    # On some machines, opening with "w" will fail if the file doesn't exist (cf. Tristan).
+    create_file_ifn(path)
+    with open(path, "w") as f:
         f.write(heading(name_without_suffix, calling_file) + content)
 
 
@@ -123,15 +143,6 @@ def cleanup(function, folder):
     else:
         os.remove(path)
         os.rename(path_temp, path)
-
-
-def create_folder_ifn(path):
-    import os
-
-    try:
-        os.makedirs(path)
-    except FileExistsError:
-        pass
 
 
 def generate(
