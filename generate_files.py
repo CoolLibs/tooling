@@ -125,10 +125,20 @@ def cleanup(function, folder):
         os.rename(path_temp, path)
 
 
+def create_folder_ifn(path):
+    import os
+
+    try:
+        os.makedirs(path)
+    except FileExistsError:
+        pass
+
+
 def generate(
     folder="generated", files=[], should_apply_clang_format=True, calling_file=""
 ):
     folder = output_folder(folder)
+    create_folder_ifn(folder)
 
     for function in files:
         generate_one(function, folder, calling_file)
