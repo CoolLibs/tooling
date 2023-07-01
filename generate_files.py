@@ -78,7 +78,6 @@ def create_file_ifn(path):
 
 def generate_file(name, name_without_suffix, content, folder, calling_file):
     path = file_path(name, folder)
-    # On some machines, opening with "w" will fail if the file doesn't exist (cf. Tristan).
     create_file_ifn(path)
     with open(path, "w") as f:
         f.write(heading(name_without_suffix, calling_file) + content)
