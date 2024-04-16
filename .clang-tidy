@@ -8,6 +8,7 @@ Checks: '
   -readability-identifier-length,
   -cppcoreguidelines-avoid-magic-numbers,
   -readability-magic-numbers,
+  -readability-redundant-member-init,
   -readability-redundant-access-specifiers,
   -readability-redundant-string-init,
   -misc-use-anonymous-namespace,
